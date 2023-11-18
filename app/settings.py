@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Installed APPS
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user.apps.CustomUserConfig',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
