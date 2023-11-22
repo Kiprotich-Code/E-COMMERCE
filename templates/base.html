@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django E-COMMERCE</title>
-    {% load bootstrap5 %}
-    {% bootstrap-css %}
-    {% bootstrap-javascript %}
 </head>
 <body>
     {% block nav %}
@@ -15,15 +12,6 @@
         <ul class="nav nav-tabs" id="navId" role="tablist">
             <li class="nav-item">
                 <a href="#tab1Id" class="nav-link active" data-bs-toggle="tab" aria-current="page">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#tab2Id">Categories</a>
-                    <a class="dropdown-item" href="#tab3Id">Available Products</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#tab4Id">Downloads</a>
-                </div>
             </li>
             <li class="nav-item" role="presentation">
                 <a href="#tab5Id" class="nav-link" data-bs-toggle="tab">About</a>
