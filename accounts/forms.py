@@ -6,11 +6,7 @@ from .models import CustomUser
 class CustomAuthenticationForm(AuthenticationForm):
     email = forms.EmailField(widget=forms.TextInput(attrs={'autofocus':True}))
 
-class UserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    first_name = forms.TextInput(max_length=50)
-    last_name = forms.TextInput(max_length=50)
-
+class UserSignupForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('email', 'first_name', 'last_name', 'password1', 'password2')
+        fields = ('email', 'username', 'first_name', 'password1', 'password2')

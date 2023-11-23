@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <form action="{% url 'register'%}" method="POST">
+    <form action="{% url 'signup'%}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" name="register" value="register">
