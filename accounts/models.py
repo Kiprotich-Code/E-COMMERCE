@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.utils import timezone
-from .constants import constants as user_constants
+# from .constants import constants as user_constants
 
 # Create your models here.
 class CustomUserManager(BaseUserManager):
@@ -17,7 +17,7 @@ class CustomUserManager(BaseUserManager):
     def create_superuser(self, email, password, **extra_fields):
         extra_fields.setdefault('is_superuser', True)
         extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('user_type', user_constants.SUPERUSER)        
+        # extra_fields.setdefault('user_type', user_constants.SUPERUSER)        
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('You must be logged in as a superuser!')
         return self.create_user(email, password, **extra_fields)
@@ -29,7 +29,7 @@ class CustomUser(AbstractUser):
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(default=timezone.now)
-    user_type = models.PositiveSmallIntegerField(choices=user_constants.USER_TYPE_CHOICES)
+    # user_type = models.PositiveSmallIntegerField(choices=user_constants.USER_TYPE_CHOICES)
 
     REQUIRED_FIELDS = []
     USERNAME_FIELD = 'email'

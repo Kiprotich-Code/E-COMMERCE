@@ -13,7 +13,6 @@ def signup(request):
             form.save()
             email = form.cleaned_data['email']
             first_name = form.cleaned_data['first_name']
-            username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             return redirect('login')
         else:
