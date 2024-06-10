@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserSignupForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -14,9 +15,10 @@ def signup(request):
             email = form.cleaned_data['email']
             first_name = form.cleaned_data['first_name']
             password = form.cleaned_data['password1']
+            messages.success(request, ('Signup successful! You can now login!'))
             return redirect('login')
         else:
-            raise ValueError('Invalid Form')
+            messages.success(request, ('Try again!'))
         
     else:
         form = UserSignupForm()
@@ -33,7 +35,7 @@ def signin(request):
             return redirect('home')
         
         else: 
-            raise ValueError('User doesnt exist')
+            messages.success(request, ('User doesnt exists! Try again!'))
         
     return render(request, 'users/login.html')
         

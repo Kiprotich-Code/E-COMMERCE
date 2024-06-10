@@ -29,7 +29,11 @@
     </nav>
     {% endblock %}
     
-   
+    <div class="container">
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    </div>
     {% block content %}
     <p class="form-text text-muted">
         <h3>This is Our Homepage</h3>
